@@ -65,7 +65,7 @@ create_CV_object <-  function(data_location,
     date_month <- stringr::str_extract(dates, "(\\w+|\\d+)(?=(\\s|\\/|-)(20|19)[0-9]{2})")
     date_month[is.na(date_month)] <- "1"
 
-    paste("1", date_month, extract_year(dates), sep = "-") %>%
+    paste("1", lubridate::month(dates), extract_year(dates), sep = "-") %>%
       lubridate::dmy()
   }
 

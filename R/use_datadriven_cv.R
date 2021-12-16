@@ -53,9 +53,9 @@
 #' @export
 use_datadriven_cv <- function(full_name = "Sarah Arcos",
                               data_location = system.file("sample_data/", package = "datadrivencv"),
-                              pdf_location = "https://github.com/nstrayer/cv/raw/master/strayer_cv.pdf",
-                              html_location = "nickstrayer.me/datadrivencv/",
-                              source_location = "https://github.com/nstrayer/datadrivencv",
+                              pdf_location = "https://github.com/ainsu23/cv/raw/master/ainsu23_cv.pdf",
+                              html_location = "ainsuasty.com/resume/",
+                              source_location = "https://github.com/ainsu23/datadrivencv",
                               which_files = "all",
                               output_dir = getwd(),
                               create_output_dir = FALSE,
