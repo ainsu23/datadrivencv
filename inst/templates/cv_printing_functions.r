@@ -94,7 +94,7 @@ create_CV_object <-  function(data_location,
         TRUE                ~ paste(end, "-", start)
       )
     ) %>%
-    dplyr::arrange(desc(parse_dates(end))) %>%
+    dplyr::arrange(desc(parse_dates(start))) %>%
     dplyr::mutate_all(~ ifelse(is.na(.), 'N/A', .))
 
   cv
