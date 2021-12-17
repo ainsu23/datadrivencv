@@ -94,7 +94,7 @@ create_CV_object <-  function(data_location,
         TRUE                ~ paste(end, "-", start)
       )
     ) %>%
-    dplyr::arrange(desc(parse_dates(start))) %>%
+    dplyr::arrange(desc(parse_dates(end))) %>%
     dplyr::mutate_all(~ ifelse(is.na(.), 'N/A', .))
 
   cv
@@ -150,6 +150,12 @@ print_section <- function(cv, section_id, glue_template = "default"){
   }
 
   section_data <- dplyr::filter(cv$entries_data, section == section_id)
+  section_data <- rbind(
+    section_data %>% filter(Start == "Current"),
+    section_data %>% filter(Start != "Current"),
+  )
+
+
 
   # Take entire entries data frame and removes the links in descending order
   # so links for the same position are right next to each other in number.
